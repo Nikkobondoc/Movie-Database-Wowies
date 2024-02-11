@@ -1,0 +1,116 @@
+/* .wrapper{
+  display: flex;
+
+} */
+
+@use "variables" as *;
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  ul{
+    display: flex;
+    flex-direction: row;
+  }
+  li{
+    padding-right: 1.5rem;
+    padding-left: 1rem;
+    list-style: none;
+  }
+  header{
+    background-color: $dark-purple; 
+  }
+  
+  .wowies{
+    font-size: 2rem;
+    border-radius: 5px;
+    /* font-family: ; */
+  }
+  
+  .about{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  font-size: larger;
+  
+  }
+  
+  .popular-home{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden
+  }
+  
+  footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background-color: $dark-purple; 
+    width: 100%;
+  }
+  
+  .tmbd{
+    padding-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    margin: 0 auto;
+  }
+  
+  nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  /* .main-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+  } */
+  
+  @media screen and (max-width:700px){
+    
+    /* about us media queries */
+    .about{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      font-size: larger;
+      justify-content: center;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+  
+      }
+  
+      nav{
+        display: none;
+      }
+  
+      .about-wowies{
+        font-size: 1.2rem;
+      }
+  
+      .about-body{
+        font-size: 0.9rem;
+  
+      }
+  
+      .tmbd{
+        width: 120px;
+      }
+      
+  
+  
+  }
+  
+  
+  
