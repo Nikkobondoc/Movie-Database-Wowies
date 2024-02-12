@@ -97,7 +97,13 @@ header{
       }
   
       nav{
-        display: none;
+        bottom: 0;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        background-color: $dark-purple;
       }
   
       .about-wowies{
@@ -111,6 +117,10 @@ header{
   
       .tmbd{
         width: 120px;
+      }
+
+      footer{
+        display: none;
       }
       
   
