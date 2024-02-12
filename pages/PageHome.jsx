@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import Movie from '../components/movie';
+import Movie from '../components/Movie';
 
 const PageHome = () => {
   const [moviesList, setMoviesList] = useState([]);
@@ -31,6 +31,14 @@ const PageHome = () => {
     <>
     <div>
       <h2>PUT FEATURE MOVIE HERE</h2>
+    </div>
+    <div className='movie-list'>
+      <select name="movie" id="movie">
+        <option value="now-playing">Now Playing</option>
+        <option value="popular">Popular</option>
+        <option value="top-rated">Top Rated</option>
+        <option value="Upcoming">Upcoming</option>
+      </select>
     </div>
       <div>Popular Movies</div>
     <div className='popular-home'>
