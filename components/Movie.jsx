@@ -9,6 +9,7 @@ const Movie = ({movieCard}) => {
       <p>{movieCard.title}</p>
       <p>{movieCard.release_date}</p>
       <p>{movieCard.vote_average}</p>
+      <p>{movieCard.overview}</p>
     </div>
   </div>
 </div>
