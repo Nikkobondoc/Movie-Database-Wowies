@@ -79,7 +79,37 @@ header{
   .movie-image-wrap:hover{
     opacity: 1;
   }
+  // .movie-image-wrap {
+  //   position: relative;
+  //   display: inline-block;
+  // }
   
+  // .movie-image-wrap img {
+  //   display: block;
+  //   width: 200px; /* Set your desired width */
+  //   height: auto; /* Maintain aspect ratio */
+  // }
+  
+  // .overlay {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  //   color: white;
+  //   display: none;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+  
+  // .overlay p {
+  //   margin: 0;
+  // }
+  
+  // .movie-image-wrap:hover .overlay {
+  //   display: flex;
+  // }
   /* .main-nav{
     display: flex;
     flex-wrap: wrap;
