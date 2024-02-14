@@ -9,6 +9,7 @@ import Footer from '../components/footer';
 import PageAbout from '../pages/PageAbout';
 import PageFavourite from '../pages/Pagefavourite';
 import Home from '../pages/PageHome.jsx';
+import PageMovie from '../pages/PageMovie.jsx';
 
 
 import React from 'react';
@@ -24,6 +25,7 @@ const AppRouter = () => {
                         <Route path='/about' element={<PageAbout />} />
                         <Route path='/favourite' element={<PageFavourite />} />
                         <Route path='/' element={<Home />} />
+                        <Route path="/movie/:id" element={<PageMovie />} />
                         {/* <Route path='/*' element={<PageNotFound />} /> */}
                     </Routes>
                 </main>
