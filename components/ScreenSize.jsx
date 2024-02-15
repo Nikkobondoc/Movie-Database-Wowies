@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect}  from "react";
 
 // handle the dimension of the webpage when resizing (responsive)
 function getWindowDimensions() {
