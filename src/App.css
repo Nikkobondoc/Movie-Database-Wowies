@@ -110,5 +110,7 @@ nav{
 }
 
 
-
+.alice-carousel__dots-item.__active{
+  border-color: red!important;
+}
 

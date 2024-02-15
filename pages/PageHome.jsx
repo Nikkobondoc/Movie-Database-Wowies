@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Movie from '../components/Movie';
+import FeatureMovie from '../components/featureMovie';
+import "react-alice-carousel/lib/alice-carousel.css";
+import "react-alice-carousel/lib/scss/alice-carousel.scss";
 
 const PageHome = () => {
   const [moviesList, setMoviesList] = useState([]);
@@ -27,11 +30,11 @@ const PageHome = () => {
 
 
   
-  console.log(moviesList);
+  // console.log(moviesList[0].backdrop_path);
   return (
     <>
     <div>
-      <h2>PUT FEATURE MOVIE HERE</h2>
+      <FeatureMovie />
     </div>
     <div className='movie-list'>
       <select name="movie" id="movie" onChange={(e) => fetchMovies(e.target.value)}>
