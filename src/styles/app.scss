@@ -172,9 +172,48 @@ header{
 
   .alice-carousel__dots{
     width: 100%;
+    // display: none;
     overflow: hidden;
   }
-  
+  .alice-carousel__stage-item *{
+    width: 500px;
+  }
+  .alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active{
+    background-color: $light-purple;
+  }
+//   /* Ensure dots container is scrollable */
+// .alice-carousel__dots {
+//   overflow-x: auto; /* Enable horizontal scrolling */
+//   white-space: nowrap; /* Prevent dots from wrapping */
+//   padding: 10px 0; /* Add padding as needed */
+// }
+
+// /* Adjust dot size and spacing */
+// .alice-carousel__dots-item {
+//   display: inline-block; /* Display dots in a row */
+//   margin: 0 3px; /* Adjust spacing between dots */
+//   width: 10px; /* Set dot width */
+//   height: 10px; /* Set dot height */
+//   background-color: #ccc; /* Color for dots */
+//   border-radius: 50%; /* Make dots circular */
+// }
+// /* Adjust active dot color */
+
+// /* Style active image */
+// .alice-carousel__stage-item.alice-carousel__stage-item--active img {
+//   /* Add your styles for the active image here */
+//   border: 2px solid #000; /* Example border */
+// }
+
+// /* Style active dot */
+// .alice-carousel__dots-item.alice-carousel__dots-item--active button {
+//   /* Add your styles for the active dot here */
+//   background-color: #000; /* Example background color */
+//   width: 10px; /* Example width */
+//   height: 10px; /* Example height */
+//   border-radius: 50%; /* Example border-radius to make it a circle */
+// }
+
   @media screen and (max-width:700px){
     
     /* about us media queries */
