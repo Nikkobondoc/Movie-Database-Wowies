@@ -9,7 +9,7 @@ function truncateOverview(overview, maxLength) {
 }
 
 const Movie = ({ movieCard }) => {
-  const truncatedOverview = truncateOverview(movieCard.overview, 100);
+  const truncatedOverview = truncateOverview(movieCard.overview, 90);
 
   return (
     <div className='popular-movie'>
