@@ -7,7 +7,7 @@ const FeatureMovie = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=d616641b0feb479ee6b4cb90a886cb1f')
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=d616641b0feb479ee6b4cb90a886cb1f')
             .then(response => response.json())
             .then(data => setMovies(data.results))
             .catch(error => console.error('Error fetching data:', error));
