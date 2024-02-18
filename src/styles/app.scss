@@ -207,7 +207,9 @@ header{
   margin-left: 2px;
 }
 /* Adjust active dot color */
-
+.alice-carousel__prev-btn-item:hover, .alice-carousel__next-btn-item:hover{
+  color: $light-purple;
+}
 
 
   @media screen and (max-width:700px){
