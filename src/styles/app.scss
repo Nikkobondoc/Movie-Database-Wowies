@@ -315,6 +315,24 @@ header{
 
 
   }
+
+  @media (min-width: $laptop){
+    .alice-carousel__dots-item:not(.__custom) {
+      padding: 0.9rem;
+      width: auto;
+      height: auto;
+      margin: 0 9px;
+    }
+    
+    .alice-carousel__dots-item:not(.__custom):not(:last-child){
+      margin-right: 8px;
+    }
+    
+    .alice-carousel__dots-item:not(.__custom):last-child{
+      margin: 0;
+      margin-left: 8px;
+    }
+  }
   
   
   
