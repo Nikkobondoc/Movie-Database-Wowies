@@ -46,7 +46,7 @@ const PageHome = () => {
         <option value="upcoming" >Upcoming</option>
       </select>
     </div>
-      <div>Popular Movies</div>
+      <div><br /></div>
     <div className='home-grid'>
       {moviesList.map(movie => (
         <Movie key={movie.id} movieCard={movie} />
