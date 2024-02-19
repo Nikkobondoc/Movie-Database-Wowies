@@ -1,55 +1,24 @@
-import React, {render} from 'react'
-import useWindowDimensions from './ScreenSize';
+import React, {render, useContext} from 'react'
+import useWindowDimensions from '../components/ScreenSize'
+
 
 function MovieDetail({movie}) {
 
-  const dimensions  = useWindowDimensions();
-
-  const isDesktop = 1440 
-  let desktop = false; 
-  if (dimensions.width > isDesktop ) { 
-    desktop = true; 
+  // const { windowDimensions } = useContext(AppContext)
+ const dimensions  = useWindowDimensions();
+  const desktopWidth = 1440 
+  let isDesktop = false; 
+  if (dimensions.width > desktopWidth ) { 
+    isDesktop = true; 
   } 
   console.log(dimensions.width)
-  console.log(desktop)
-
-//   const dimensions  = useWindowDimensions();
-//   console.log(dimensions.width)
-
-//   // console.log(movie) 
-
-
-// class MovieDetail extends React.Component{
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       isDesktop: false 
-//     };
-
-//     this.updatePredicate = this.updatePredicate.bind(this);
-//   }
-//   componentDidMount() {
-//     this.updatePredicate();
-//     window.addEventListener("resize", this.updatePredicate);
-//   }
-
-//   componentWillUnmount() {
-//     window.removeEventListener("resize", this.updatePredicate);
-//   }
-
-//   updatePredicate() {
-//     this.setState({ isDesktop: window.innerWidth > 1440 });
-//   }
-
+  console.log(isDesktop)
 
     return (
       <div>
-        {desktop ? (
+        {isDesktop ? (
           // if is desktop....
           <div>
-            <h2>{movie.title}</h2>
-            <p>{movie.overview}</p>
-            <p>Genre: {movie.genres.map(genres => genres.name).join(", ")}</p>
             <div className="movie-backdrop">
                 {movie.backdrop_path === null ? 
                   <img className="no-backdrop" src={noDisplay} alt="No Backdrop Poster" /> : 
@@ -63,9 +32,6 @@ function MovieDetail({movie}) {
           </div>
         ) : (
           <div>
-            <h2>{movie.title}</h2>
-            <p>{movie.overview}</p>
-            <p>Genre: {movie.genres.map(genres => genres.name).join(", ")}</p>
             <div className="movie-backdrop">
                 {movie.poster_path === null ?
                   <img className="no-poster" src={noPoster} alt="No poster available." /> :
@@ -73,6 +39,20 @@ function MovieDetail({movie}) {
             </div>  
           </div>
         )}
+
+        <div className="movie-info-single">
+          <div className="release-runtime-vote">
+              {/* <p>{movie.release_date === "" ? <p>Date Unavailable</p> : dateFormat(movie.release_date) }</p> */}
+              <p>{movie.release_date}</p>
+              {/* <p>{minToHrMin(movie.runtime)}</p> */}
+              <p>{movie.runtime}</p>
+              {/* format the release date and runtime */}
+              <p className="vote">{movie.vote_average}</p>
+          </div>
+          <h2>{movie.title}</h2>
+          <p className="desc">{movie.overview}</p>
+          <p>Genre: {movie.genres.map(genres => genres.name).join(", ")}</p>
+        </div>
       </div>
     );
   }

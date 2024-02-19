@@ -3,6 +3,7 @@ import { useState, useEffect}  from "react";
 // handle the dimension of the webpage when resizing (responsive)
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
+  // Destructuring assignment 
   return {
     width,
     height

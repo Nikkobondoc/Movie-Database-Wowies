@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useParams } from "react-router-dom"
 import MovieDetail from "../components/MovieDetail"
 
@@ -7,7 +7,8 @@ const PageMovie =()=> {
   const { id } = useParams(); 
 
 useEffect(() => {
-  const getMovie = async () => {
+  // only triggered when id changes
+  const getMovie = async () => { //async -> dont wait me just do
       const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=d616641b0feb479ee6b4cb90a886cb1f`);
       const moviesDataFromAPI = await response.json();
       setMovie(moviesDataFromAPI);
