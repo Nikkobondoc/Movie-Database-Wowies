@@ -1,5 +1,5 @@
 @use "variables" as *;
-
+@use "mixins" as *;
 
 main{ 
     margin:10px; 
@@ -12,8 +12,20 @@ main{
 
     img{
         display: block;
-        width: 100%;
+        width: auto;
         height: auto;
-        object-fit: contain;
+        object-fit: cover;
+    }
+
+    @include mq($tablet) {
+        display:flex; 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    @include mq($desktop) { 
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        margin: 0 auto; 
     }
 }
