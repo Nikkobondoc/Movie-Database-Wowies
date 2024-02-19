@@ -16,7 +16,7 @@ const FeatureMovie = () => {
     const handleDragStart = (e) => e.preventDefault();
 
     const items = movies.map(movie => (
-        <img key={movie.id} src={`https://image.tmdb.org/t/p/w200/${movie.backdrop_path}`} onDragStart={handleDragStart} role="presentation" />
+        <img key={movie.id} src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} onDragStart={handleDragStart} role="presentation" />
     ));
 
     return (

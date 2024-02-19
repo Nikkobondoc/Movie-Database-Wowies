@@ -80,79 +80,87 @@ header{
     padding-bottom:65px; 
   }
 
-  .movie-image-wrap:hover{
-    opacity: 1; 
-  }
-  // for hover effect 
-   .movie-image-wrap {
-     position: relative;
-     display: inline-block;
-   }
-  .more-info {
-    align-items: center;
-    background-color: $light-purple;
-    border: 0;
-    border-radius: 100px;
-    box-sizing: border-box;
-    color: #ffffff;
-    display: inline-flex;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 20px;
-    max-width: 480px;
-    min-height: 40px;
-    min-width: 0px;
-    overflow: hidden;
-    padding: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-    user-select: none;
-    vertical-align: middle;
-    margin: 0 auto;
-}
+//   .movie-image-wrap:hover{
+//     opacity: 1; 
+//   }
+//   // for hover effect 
+//    .movie-image-wrap {
+//      position: relative;
+//     //  display: inline-block;
+//    }
+//   .more-info {
+//     align-items: center;
+//     background-color: $light-purple;
+//     border: 0;
+//     border-radius: 100px;
+//     box-sizing: border-box;
+//     color: #ffffff;
+//     display: inline-flex;
+//     font-size: 16px;
+//     font-weight: 600;
+//     justify-content: center;
+//     line-height: 20px;
+//     max-width: 480px;
+//     min-height: 40px;
+//     min-width: 0px;
+//     overflow: hidden;
+//     padding: 0px;
+//     padding-left: 20px;
+//     padding-right: 20px;
+//     text-align: center;
+//     user-select: none;
+//     vertical-align: middle;
+//     margin: 0 auto;
+// }
 
-   .movie-card-title{
-    font-weight: 700;
-    top: 0;
-    position: absolute;
-    padding-top: 5px;
-    padding-left: 5px;
-   }
+  //  .movie-card-title{
+  //   font-weight: 700;
+  //   top: 0;
+  //   position: absolute;
+  //   padding-top: 5px;
+  //   padding-left: 5px;
+  //  }
 
-   .movie-card-release-date{
-    padding-left: 5px;
-   }
+  //  .movie-card-release-date{
+  //   padding-left: 5px;
+  //  }
    
-   .movie-card-average{
-    padding-left: 5px;
-   }
+  //  .movie-card-average{
+  //   padding-left: 5px;
+  //  }
   
-   .movie-image-wrap img {
-     display: block;
-     width: 200px; 
-     height: auto; 
-   }
+  //  .movie-image-wrap img {
+  //    display: block;
+  //    width: 200px; 
+  //    height: auto; 
+  //  }
   
-   .overlay {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-color: rgba(0, 0, 0, 0.5); 
-     color: white;
-     display: none;
-     justify-content: center;
-     align-items: center;
+  //  .overlay {
+  //    position: absolute;
+  //    top: 0;
+  //    left: 0;
+  //    width: 100%;
+  //    height: 100%;
+  //    background-color: rgba(0, 0, 0, 0.5); 
+  //    color: white;
+  //    display: none;
+  //    justify-content: center;
+  //    align-items: center;
+  //    text-align: center;
 
-   }
+  //    p, 
+  //    h2, 
+  //    button { 
+  //     text-align: center;
+  //     margin: 0 auto;
+  //    }
+
+  //  }
   
- .overlay p {
-     margin: 0;
-     font-size: small;
-   }
+//  .overlay p {
+//      margin: 0;
+//      font-size: small;
+//    }
   
    .movie-image-wrap:hover .overlay {
      display: flex;
@@ -170,17 +178,35 @@ header{
   } 
   //for hover effect
 
-  .alice-carousel__stage{
-    gap: 2rem;
-  }
-
+  // .alice-carousel__stage{
+  //   gap: 2rem;
+  // }
+  // .alice-carousel__stage-item.__active.__target{ 
+  //   width: 100%;
+  // }
   .alice-carousel__dots{
+    display: block;
     width: 100%;
     // display: none;
     overflow: hidden;
+    margin:0 auto; 
   }
-  .alice-carousel__stage-item *{
-    width: 500px;
+  .alice-carousel__stage-item{
+    min-width: 100%;
+    z-index: 0;
+    filter: brightness(50%);
+    display: block;
+    line-height: 0;
+    object-fit: cover;
+    object-position: center;
+    background-position: center;
+    display: flex;
+
+    img {
+      object-fit: cover;
+      height: auto;
+      width: 100%;
+    }
   }
   .alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active{
     background-color: $light-purple;
