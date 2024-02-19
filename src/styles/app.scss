@@ -15,6 +15,7 @@ header{
   ul{
     display: flex;
     flex-direction: row;
+    padding: 0;
   }
   li{
     padding-right: 1.5rem;
@@ -80,7 +81,7 @@ header{
   }
 
   .movie-image-wrap:hover{
-    opacity: 1;
+    opacity: 1; 
   }
   // for hover effect 
    .movie-image-wrap {
@@ -168,7 +169,52 @@ header{
     margin-top: 10px;
   } 
   //for hover effect
+
+  .alice-carousel__stage{
+    gap: 2rem;
+  }
+
+  .alice-carousel__dots{
+    width: 100%;
+    // display: none;
+    overflow: hidden;
+  }
+  .alice-carousel__stage-item *{
+    width: 500px;
+  }
+  .alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active{
+    background-color: $light-purple;
+  }
+  /* Ensure dots container is scrollable */
   
+.alice-carousel__dots {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent dots from wrapping */
+  padding: 10px 0; /* Add padding as needed */
+}
+
+/* Adjust dot size and spacing */
+.alice-carousel__dots-item:not(.__custom) {
+  padding: 0.3rem;
+  width: auto;
+  height: auto;
+  margin: 0 3px;
+}
+
+.alice-carousel__dots-item:not(.__custom):not(:last-child){
+  margin-right: 2px;
+}
+
+.alice-carousel__dots-item:not(.__custom):last-child{
+  margin: 0;
+  margin-left: 2px;
+}
+/* Adjust active dot color */
+.alice-carousel__prev-btn-item:hover, .alice-carousel__next-btn-item:hover{
+  color: $light-purple;
+}
+
+
   @media screen and (max-width:700px){
     
     /* about us media queries */
@@ -217,7 +263,6 @@ header{
         display: none;
       }
       
-  
   
   }
   

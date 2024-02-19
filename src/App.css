@@ -40,7 +40,7 @@ font-size: larger;
 .popular-home{
   display: flex;
   flex-direction: row;
-  overflow: hidden
+  overflow: hidden;
 }
 
 footer{
@@ -110,5 +110,7 @@ nav{
 }
 
 
-
+.alice-carousel__dots-item.__active{
+  border-color: red!important;
+}
 

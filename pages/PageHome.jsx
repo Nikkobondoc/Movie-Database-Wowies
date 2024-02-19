@@ -1,6 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Movie from '../components/Movie';
 // import '../components/dropdown';
+=======
+import FeatureMovie from '../components/featureMovie';
+import "react-alice-carousel/lib/alice-carousel.css";
+import "react-alice-carousel/lib/scss/alice-carousel.scss";
+
 
 const PageHome = () => {
   const [moviesList, setMoviesList] = useState([]);
@@ -53,13 +58,10 @@ const PageHome = () => {
   )
 
 
-  
-  console.log("MovieList:", moviesList);
-  
   return (
     <>
     <div>
-      <h2>PUT FEATURE MOVIE HERE</h2>
+      <FeatureMovie />
     </div>
     <div className='movie-list'>
       <select name="movie-dropdown" id="movie-dropdown" className='movie-dropdown' onChange={(e) => setQuery(e.target.value)}>
@@ -103,7 +105,7 @@ const PageHome = () => {
       </div> */}
 
     </div>
-      <div>Popular Movies</div>
+      <div><br /></div>
     <div className='home-grid'>
       {moviesList.map(movie => (
         <Movie key={movie.id} movieCard={movie} />
