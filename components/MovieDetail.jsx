@@ -1,5 +1,8 @@
 import React, {render, useContext} from 'react'
 import useWindowDimensions from '../components/ScreenSize'
+import { dateFormat } from '../utilities/format';
+import { minToHrMin } from '../utilities/format';
+import { ratingAverage } from '../utilities/format';
 
 
 function MovieDetail({movie}) {
@@ -43,11 +46,11 @@ function MovieDetail({movie}) {
         <div className="movie-info-single">
           <div className="release-runtime-vote">
               {/* <p>{movie.release_date === "" ? <p>Date Unavailable</p> : dateFormat(movie.release_date) }</p> */}
-              <p>{movie.release_date}</p>
+              <p>{movie.release_date === "" ? <p>Date Unavailable</p> : dateFormat(movie.release_date) }</p>
               {/* <p>{minToHrMin(movie.runtime)}</p> */}
-              <p>{movie.runtime}</p>
+              <p>{minToHrMin(movie.runtime)}</p>
               {/* format the release date and runtime */}
-              <p className="vote">{movie.vote_average}</p>
+              <p className="vote">{ratingAverage(movie.vote_average)}</p>
           </div>
           <h2>{movie.title}</h2>
           <p className="desc">{movie.overview}</p>
