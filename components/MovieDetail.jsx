@@ -10,9 +10,9 @@ function MovieDetail({ movie }) {
 
   const isDesktop = dimensions.width > desktopWidth;
 
+  // Revised addFavouriteMovie function
   const addFavouriteMovie = (movie) => {
-    const newFavouriteList = [favourites, movie];
-    setFavourites(newFavouriteList);
+    setFavourites(prevFavourites => [...prevFavourites, movie]);
   };
 
   return (
@@ -45,3 +45,4 @@ function MovieDetail({ movie }) {
 }
 
 export default MovieDetail;
+
