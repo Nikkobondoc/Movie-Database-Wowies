@@ -7,12 +7,11 @@ function MovieDetail({ movie }) {
   const dimensions = useWindowDimensions();
   const desktopWidth = 1440;
   const [favourites, setFavourites] = useState([]);
-  
 
   const isDesktop = dimensions.width > desktopWidth;
 
   const addFavouriteMovie = (movie) => {
-    const newFavouriteList = [...favourites, movie];
+    const newFavouriteList = [favourites, movie];
     setFavourites(newFavouriteList);
   };
 
@@ -36,6 +35,7 @@ function MovieDetail({ movie }) {
         <p className="desc">{movie.overview}</p>
         <p>Genre: {movie.genres.map(genre => genre.name).join(", ")}</p>
         
+        {/* Wrap AddFavourites component with a clickable div */}
         <div onClick={() => addFavouriteMovie(movie)}>
           <AddFavourites /> 
         </div>
