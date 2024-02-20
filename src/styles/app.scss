@@ -316,7 +316,7 @@ header{
 
   }
 
-  @media (min-width: $laptop){
+  @media (min-width: $desktop){
     .alice-carousel__dots-item:not(.__custom) {
       padding: 0.9rem;
       width: auto;
