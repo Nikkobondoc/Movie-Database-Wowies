@@ -240,10 +240,6 @@ header{
   color: $light-purple;
 }
 
-.alice-carousel__dots{
-  justify-content: center;
-}
-
 
   @media screen and (max-width:700px){
     
@@ -294,49 +290,6 @@ header{
       }
       
   
-  }
-
-  @media (min-width: $tablet) {
-    .alice-carousel__dots-item:not(.__custom) {
-      padding: 0.6rem;
-      width: auto;
-      height: auto;
-      margin: 0 8px;
-    }
-    
-    .alice-carousel__dots-item:not(.__custom):not(:last-child){
-      margin-right: 5px;
-    }
-    
-    .alice-carousel__dots-item:not(.__custom):last-child{
-      margin: 0;
-      margin-left: 5px;
-    }
-
-
-  }
-
-  @media (min-width: $desktop){
-    .alice-carousel__dots-item:not(.__custom) {
-      padding: 0.9rem;
-      width: auto;
-      height: auto;
-      margin: 0 9px;
-    }
-    
-    .alice-carousel__dots-item:not(.__custom):not(:last-child){
-      margin-right: 8px;
-    }
-    
-    .alice-carousel__dots-item:not(.__custom):last-child{
-      margin: 0;
-      margin-left: 8px;
-    }
-
-    .alice-carousel__stage{
-      gap: 90rem;
-      margin-left:  40rem;
-    }
   }
   
   
