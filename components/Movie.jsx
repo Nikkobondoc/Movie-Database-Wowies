@@ -20,8 +20,8 @@ const Movie = ({ movieCard }) => {
         <div className='movie-image-wrap'>
           <img key={movieCard.id} src={`https://image.tmdb.org/t/p/original/${movieCard.poster_path}`} alt={movieCard.title} />
           <div className="overlay">
+            <p className='movie-card-release-date'>{dateFormat(movieCard.release_date) }</p>
             <h2 className='movie-card-title'>{movieCard.title}</h2>
-            <p className='movie-card-release-date'>{movieCard.release_date === "" ? <p>Date Unavailable</p> : dateFormat(movieCard.release_date) }</p>
             <p className='movie-card-average'>{ratingAverage(movieCard.vote_average)}</p>
             <p className='movie-card-overv'>{truncatedOverview}</p>
             <div className="movie-button">

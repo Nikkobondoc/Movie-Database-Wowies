@@ -25,25 +25,35 @@ function MovieDetail({movie}) {
             <div className="movie-backdrop">
                 {movie.backdrop_path === null ? 
                   <img className="no-backdrop" src={noDisplay} alt="No Backdrop Poster" /> : 
-                  <img className="backdrop-img" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} width="300"/>
+                  <img className="backdrop-img" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} />
                 }
 
-                {movie.poster_path === null ?
+                {/* {movie.poster_path === null ?
                   <img className="no-poster" src={noPoster} alt="No poster available." /> :
-                  <img className="poster-mobile" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} width="145"/>}
+                  <img className="movie-poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}/>} */}
             </div>  
           </div>
         ) : (
           <div>
-            <div className="movie-backdrop">
+            {/* <div className="movie-backdrop">
                 {movie.poster_path === null ?
                   <img className="no-poster" src={noPoster} alt="No poster available." /> :
-                  <img className="poster-mobile" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} width="145"/>}
-            </div>  
+                  <img className="movie-poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />}
+            </div>   */}
           </div>
         )}
 
+                  
+      <div className='movie-detail-wrapper'>
+
+        <div className="movie-poster-wrapper">
+          {movie.poster_path === null ?
+            <img className="no-poster" src={noPoster} alt="No poster available." /> :
+            <img className="movie-poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />}
+        </div>  
+
         <div className="movie-info-single">
+          <h2>{movie.title}</h2>
           <div className="release-runtime-vote">
               {/* <p>{movie.release_date === "" ? <p>Date Unavailable</p> : dateFormat(movie.release_date) }</p> */}
               <p>{movie.release_date === "" ? <p>Date Unavailable</p> : dateFormat(movie.release_date) }</p>
@@ -51,12 +61,16 @@ function MovieDetail({movie}) {
               <p>{minToHrMin(movie.runtime)}</p>
               {/* format the release date and runtime */}
               <p className="vote">{ratingAverage(movie.vote_average)}</p>
+              <p>Genre: {movie.genres.map(genres => genres.name).join(", ")}</p>
           </div>
-          <h2>{movie.title}</h2>
           <p className="desc">{movie.overview}</p>
-          <p>Genre: {movie.genres.map(genres => genres.name).join(", ")}</p>
+        </div>
+
+        <div className='fav-btn'>
+          <button>Add to Favourite</button>
         </div>
       </div>
+    </div>
     );
   }
 
