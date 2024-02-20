@@ -1,0 +1,51 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+
+.movie-backdrop{ 
+    img{ 
+        display: block;
+        height: auto;
+        width:100%;
+        filter:brightness(30%)
+    }
+}
+
+.movie-detail-wrapper{ 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 1rem;
+
+    @include mq(740px){
+        font-size:1.25rem;
+        display: grid;
+        grid-template-columns: 25% 75%;
+        gap: 1rem;
+        margin:30px; 
+        justify-items: center;
+        align-items: center;
+    } 
+}
+
+.movie-info-single{ 
+    padding-right:1rem; 
+}
+
+.movie-poster-wrapper{ 
+
+    position: relative;
+
+    img{ 
+        display: block;
+        width: 100%; 
+        height: auto; 
+        // max-width: 300px;
+        margin: 0 auto;
+
+      }
+      .movie-poster{ 
+        max-width: 400px;
+    }
+      
+}
