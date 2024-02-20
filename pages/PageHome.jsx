@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Movie from '../components/Movie';
 // import '../components/dropdown';
-import FeatureMovie from '../components/FeatureMovie';
+import FeatureMovie from '/./components/FeatureMovie';
 import "react-alice-carousel/lib/alice-carousel.css";
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
 
