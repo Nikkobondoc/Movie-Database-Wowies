@@ -85,9 +85,18 @@ main{
 
     &:hover{ 
         background-color: $light-purple;
+        cursor: pointer;
+
     }
     &:active{ 
         background-color: $light-purple;
+        border: none;
+        outline: 0;
+        background-color: white;
+        color:$dark-purple; 
+    }
+    &:focus{ 
+        outline:0;
     }
 }
 

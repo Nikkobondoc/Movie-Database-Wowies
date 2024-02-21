@@ -72,36 +72,6 @@ const PageHome = () => {
         <option value="top_rated" >Top Rated</option>
         <option value="upcoming" >Upcoming</option>
       </select>
-        {/* <input type="radio" name="sortType" value="Popular" checked="checked" id="sort-popular" onclick={(e) => setQuery(e.target.value)}/>
-        <label for="sort-popular">Popular</label>
-
-        <input type="radio" name="sortType" value="Now Playing" id="sort-now-playing" onclick={(e) => setQuery(e.target.value)}/>
-        <label for="sort-now-playingr">Now Playing</label>
-
-        <input type="radio" name="sortType" value="Top Rated" id="sort-top-rated" onclick={(e) => setQuery(e.target.value)}/>
-        <label for="sort-top-rated">Top Rated</label>
-
-        <input type="radio" name="sortType" value="Upcoming" id="sort-upcoming" onclick={(e) => setQuery(e.target.value)}/>
-        <label for="sort-upcoming">Upcoming</label> */}
-
-     
-
-      {/* <div class="custom-select">
-        <button class="select-button">
-          <span class="selected-value">Open this select menu</span>
-          <span class="arrow"></span>
-        </button>
-        <ul class="select-dropdown">
-          <li>
-            <input type="radio" id="github" name="social-account" />
-            <label for="github">GitHub</label>
-          </li>
-          <li>
-            <input type="radio" id="instagram" name="social-account" />
-            <label for="instagram">Instagram</label>
-          </li>
-        </ul>
-      </div> */}
 
     </div>
       <div><br /></div>

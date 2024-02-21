@@ -206,10 +206,12 @@ header{
     object-position: center;
     background-position: center;
     display: flex;
+    position: relative;
 
     img {
+      // position: absolute;
       object-fit: cover;
-      height: auto;
+      height: 80vh;
       width: 100%;
     }
   }
@@ -271,6 +273,7 @@ header{
 
         position: fixed;
         bottom: 0;
+        left:0; 
         height: 65px;
         width: 100%;
         display: flex;
