@@ -33,10 +33,9 @@ const PageFavourite = () => {
           favouriteItems.map((movie, index) => (
             <div key={index} className='movie-card'>
               <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} width="200" />
-              <button onClick={() => removeFavouritesMovie(movie.id)}><Removefavourites /></button>
-              <div className="overlay">
-                {/* <h4>{movie.description}</h4> */}
+              <div className="overlay-favourite">
                 <h3>{movie.title}</h3>
+              <button onClick={() => removeFavouritesMovie(movie.id)}><Removefavourites /></button>
               </div>
             </div>
           ))

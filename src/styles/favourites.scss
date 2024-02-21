@@ -2,32 +2,35 @@
 
 // favourites.scss
 
-// .movie-card {
-//   position: relative;
-//   width: 200px; /* Set a fixed width for the movie card */
-// }
+.movie-card {
+  position: relative;
+  width: 200px; 
+}
 
-// .movie-card img {
-//   width: 100%; /* Ensure the image fills the container */
-//   height: auto; /* Maintain aspect ratio */
-// }
+.movie-card img {
+  width: 100%; 
+  height: 100%; 
+  position: relative;
+}
 
-// .overlay {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0); /* Initially transparent */
-//   color: white;
-//   display: flex;
-//   flex-direction: column; /* Arrange title and description vertically */
-//   justify-content: center;
-//   opacity: 0; /* Initially hidden */
-//   transition: opacity 0.3s ease; /* Smooth transition effect */
-// }
+.overlay-favourite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Initially transparent */
+  color: white;
+  display: flex;
+  flex-direction: column; /* Arrange title and description vertically */
+  justify-content: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition effect */
+  z-index: 2;
+}
 
-// .movie-card:hover .overlay {
-//   opacity: 1; /* Show overlay on hover */
-// }
+.movie-card:hover .overlay-favourite {
+  opacity: 1; /* Show overlay on hover */
+}
+
 
