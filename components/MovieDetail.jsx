@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import useWindowDimensions from '../components/ScreenSize';
 import { dateFormat, minToHrMin, ratingAverage } from '../utilities/format';
 import AddFavourites from './AddFavourites';
+import React, { useState, useEffect } from 'react';
 
 function MovieDetail({ movie }) {
   const dimensions = useWindowDimensions();
@@ -10,10 +11,25 @@ function MovieDetail({ movie }) {
 
   const isDesktop = dimensions.width > desktopWidth;
 
-  // Revised addFavouriteMovie function
+
+  
   const addFavouriteMovie = (movie) => {
-    setFavourites(prevFavourites => [...prevFavourites, movie]);
+    const newFavouriteMovie = [...favourites, movie];
+    setFavourites(newFavouriteMovie);
+    localStorage.setItem('favourites-movies', JSON.stringify(newFavouriteMovie));
   };
+
+  useEffect(() => {
+    const storedFavourites = localStorage.getItem('favourites-movies');
+    if (storedFavourites) {
+      setFavourites(JSON.parse(storedFavourites));
+    }
+  }, []);
+  
+  
+
+    
+  
 
   return (
     <div>
@@ -21,7 +37,7 @@ function MovieDetail({ movie }) {
         {movie.backdrop_path === null ? (
           <img className="no-backdrop" src={noDisplay} alt="No Backdrop Poster" />
         ) : (
-          <img className="backdrop-img" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} width="300" />
+          <img className="backdrop-img" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} width="300" />
         )}
       </div>
 
@@ -36,9 +52,9 @@ function MovieDetail({ movie }) {
         <p>Genre: {movie.genres.map(genre => genre.name).join(", ")}</p>
         
         {/* Wrap AddFavourites component with a clickable div */}
-        <div onClick={() => addFavouriteMovie(movie)}>
+        <button onClick={() => addFavouriteMovie(movie)}>
           <AddFavourites /> 
-        </div>
+        </button>
       </div>
     </div>
   );
