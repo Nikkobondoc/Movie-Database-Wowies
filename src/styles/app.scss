@@ -9,9 +9,13 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    padding: 0 1rem; 
+    font-family: $header-font;
+    font-size: 1.5rem;
+    align-items: center;
+   
   }
-  
+
   ul{
     display: flex;
     flex-direction: row;
@@ -27,9 +31,9 @@ header{
   }
   
   .wowies{
-    font-size: 2rem;
-    border-radius: 5px;
-    /* font-family: ; */
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
   }
   
   .about{
@@ -54,6 +58,7 @@ header{
     justify-content: center;
     background-color: $dark-purple; 
     width: 100%;
+    font-family: $header-font;
   }
   
   .tmbd{
@@ -201,10 +206,12 @@ header{
     object-position: center;
     background-position: center;
     display: flex;
+    position: relative;
 
     img {
+      // position: absolute;
       object-fit: cover;
-      height: auto;
+      height: 80vh;
       width: 100%;
     }
   }
@@ -266,6 +273,7 @@ header{
 
         position: fixed;
         bottom: 0;
+        left:0; 
         height: 65px;
         width: 100%;
         display: flex;

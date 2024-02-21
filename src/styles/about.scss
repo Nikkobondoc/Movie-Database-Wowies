@@ -1,0 +1,19 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.about{ 
+    display: flex;
+    line-height: 1.5rem;
+
+    h1{ 
+        text-align: center;
+    }
+    @include mq($desktop){ 
+        max-width:75%; 
+        margin: 0 auto;
+
+        p{ 
+            line-height: 2;
+        }
+    }
+}

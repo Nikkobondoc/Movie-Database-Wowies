@@ -1,0 +1,145 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+
+.movie-detail-wrapper{ 
+    position: relative;
+}
+
+.movie-detail-container{ 
+    position: absolute;
+    top:0; 
+    @include mq($desktop){ 
+        left: 50%;
+        transform: translateX(-50%); 
+    }
+   
+}
+
+.movie-backdrop{ 
+    position: absolute;
+    top:0; 
+    left:0; 
+}
+
+.movie-backdrop{ 
+    img{ 
+        display: block;
+        height: auto;
+        width:100%;
+        filter:brightness(15%)
+    }
+}
+
+.movie-detail-container{ 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    align-items: center;
+
+    margin: 0 auto;
+
+    @include mq(740px){
+        font-size:1.25rem;
+        display: grid;
+        grid-template-columns: 25% 75%;
+        gap: 1rem;
+        margin:30px; 
+        justify-items: center;
+        align-items: center;
+    } 
+    @include mq($desktop){ 
+        width: 75%;
+    }
+}
+
+.movie-info-single{ 
+    padding-right:1rem; 
+}
+
+.movie-poster-wrapper{ 
+
+    position: relative;
+
+    img{ 
+        display: block;
+        width: 100%; 
+        height: auto; 
+        // max-width: 300px;
+        margin: 0 auto;
+
+      }
+      .movie-poster{ 
+        max-width: 400px;
+    }
+      
+}
+
+//fav btn 
+.fav-btn{ 
+    align-items: center;
+    background-color: $dark-purple;
+    border: none;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: inline-flex;
+    font-size: 20px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding:1rem 2rem; 
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+    margin: 1rem auto;
+    font-family: $body-font;
+
+    &:hover{ 
+        background-color: $light-purple;
+        cursor: pointer;
+
+    }
+    &:active{ 
+        background-color: $light-purple;
+        border: none;
+        outline: 0;
+        background-color: white;
+        color:$dark-purple; 
+    }
+    &:focus{ 
+        outline:0;
+    }
+}
+
+
+//trailers 
+.video-container-wrapper{ 
+    .video-iframe-container{ 
+
+        overflow: hidden;
+        // padding-bottom: 56.25%;
+        // position: relative;
+        // height: 0;
+
+        iframe{ 
+        border-style: none;
+        min-width: 300px;
+        min-height: 156px;
+        max-width: 100%;
+        // width: 100%;
+        // max-height: auto;
+        // margin: 0 auto;
+
+        @include mq($tablet){ 
+            max-height: 100%;
+        }
+        }
+    }
+  
+}
