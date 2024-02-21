@@ -3,6 +3,7 @@ import useWindowDimensions from '../components/ScreenSize'
 import { dateFormat } from '../utilities/format';
 import { minToHrMin } from '../utilities/format';
 import { ratingAverage } from '../utilities/format';
+import Trailer from './Trailer';
 
 
 function MovieDetail({movie}) {
@@ -27,21 +28,9 @@ function MovieDetail({movie}) {
                   <img className="no-backdrop" src={noDisplay} alt="No Backdrop Poster" /> : 
                   <img className="backdrop-img" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} />
                 }
-
-                {/* {movie.poster_path === null ?
-                  <img className="no-poster" src={noPoster} alt="No poster available." /> :
-                  <img className="movie-poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}/>} */}
             </div>  
           </div>
-        ) : (
-          <div>
-            {/* <div className="movie-backdrop">
-                {movie.poster_path === null ?
-                  <img className="no-poster" src={noPoster} alt="No poster available." /> :
-                  <img className="movie-poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />}
-            </div>   */}
-          </div>
-        )}
+        ) : ""}
 
                   
       <div className='movie-detail-wrapper'>
@@ -66,9 +55,10 @@ function MovieDetail({movie}) {
           <p className="desc">{movie.overview}</p>
         </div>
 
-        <div className='fav-btn'>
-          <button>Add to Favourite</button>
+        <div className='fav-btn-wrapper'>
+          <button className='fav-btn'>Add to Favourite</button>
         </div>
+        {movie.videos.results.length > 0 ? <Trailer movie={movie} /> : <div></div>}
       </div>
     </div>
     );

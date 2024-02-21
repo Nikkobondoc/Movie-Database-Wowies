@@ -49,3 +49,63 @@
     }
       
 }
+
+//fav btn 
+.fav-btn{ 
+    align-items: center;
+    background-color: $dark-purple;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+    margin: 0 auto;
+
+    &:hover{ 
+        background-color: $light-purple;
+    }
+    &:active{ 
+        background-color: $light-purple;
+    }
+}
+
+
+//trailers 
+.video-container-wrapper{ 
+    .video-iframe-container{ 
+
+        overflow: hidden;
+        // padding-bottom: 56.25%;
+        // position: relative;
+        // height: 0;
+
+        iframe{ 
+        border-style: none;
+        min-width: 300px;
+        min-height: 156px;
+        max-width: 100%;
+        // width: 100%;
+        // max-height: auto;
+        // margin: 0 auto;
+
+        @include mq($tablet){ 
+            max-height: 100%;
+        }
+        }
+    }
+  
+}
