@@ -1,8 +1,7 @@
-// import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useWindowDimensions from '../components/ScreenSize';
 import { dateFormat, minToHrMin, ratingAverage } from '../utilities/format';
 import AddFavourites from './AddFavourites';
-import React, { useState, useEffect } from 'react';
 
 function MovieDetail({ movie }) {
   const dimensions = useWindowDimensions();
@@ -11,12 +10,13 @@ function MovieDetail({ movie }) {
 
   const isDesktop = dimensions.width > desktopWidth;
 
-
-  
   const addFavouriteMovie = (movie) => {
-    const newFavouriteMovie = [...favourites, movie];
-    setFavourites(newFavouriteMovie);
-    localStorage.setItem('favourites-movies', JSON.stringify(newFavouriteMovie));
+  
+    if (!favourites.some((item) => item.id === movie.id)) {
+      const newFavouriteMovie = [...favourites, movie];
+      setFavourites(newFavouriteMovie);
+      localStorage.setItem('favourites-movies', JSON.stringify(newFavouriteMovie));
+    }
   };
 
   useEffect(() => {
@@ -25,11 +25,6 @@ function MovieDetail({ movie }) {
       setFavourites(JSON.parse(storedFavourites));
     }
   }, []);
-  
-  
-
-    
-  
 
   return (
     <div>
@@ -51,7 +46,7 @@ function MovieDetail({ movie }) {
         <p className="desc">{movie.overview}</p>
         <p>Genre: {movie.genres.map(genre => genre.name).join(", ")}</p>
         
-        {/* Wrap AddFavourites component with a clickable div */}
+        
         <button onClick={() => addFavouriteMovie(movie)}>
           <AddFavourites /> 
         </button>
@@ -61,4 +56,5 @@ function MovieDetail({ movie }) {
 }
 
 export default MovieDetail;
+
 
