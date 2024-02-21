@@ -19,21 +19,19 @@ function MovieDetail({movie}) {
   console.log(isDesktop)
 
     return (
-      <div>
+      <div className='movie-detail-wrapper'>
         {isDesktop ? (
           // if is desktop....
-          <div>
             <div className="movie-backdrop">
                 {movie.backdrop_path === null ? 
                   <img className="no-backdrop" src={noDisplay} alt="No Backdrop Poster" /> : 
                   <img className="backdrop-img" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} />
                 }
             </div>  
-          </div>
         ) : ""}
 
                   
-      <div className='movie-detail-wrapper'>
+      <div className='movie-detail-container'>
 
         <div className="movie-poster-wrapper">
           {movie.poster_path === null ?

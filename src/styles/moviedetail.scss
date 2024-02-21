@@ -2,20 +2,43 @@
 @use "mixins" as *;
 
 
+.movie-detail-wrapper{ 
+    position: relative;
+}
+
+.movie-detail-container{ 
+    position: absolute;
+    top:0; 
+    @include mq($desktop){ 
+        left: 50%;
+        transform: translateX(-50%); 
+    }
+   
+}
+
+.movie-backdrop{ 
+    position: absolute;
+    top:0; 
+    left:0; 
+}
+
 .movie-backdrop{ 
     img{ 
         display: block;
         height: auto;
         width:100%;
-        filter:brightness(30%)
+        filter:brightness(15%)
     }
 }
 
-.movie-detail-wrapper{ 
+.movie-detail-container{ 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     font-size: 1rem;
+    align-items: center;
+
+    margin: 0 auto;
 
     @include mq(740px){
         font-size:1.25rem;
@@ -26,6 +49,9 @@
         justify-items: center;
         align-items: center;
     } 
+    @include mq($desktop){ 
+        width: 75%;
+    }
 }
 
 .movie-info-single{ 
@@ -54,12 +80,12 @@
 .fav-btn{ 
     align-items: center;
     background-color: $dark-purple;
-    border: 0;
+    border: none;
     border-radius: 100px;
     box-sizing: border-box;
     color: #ffffff;
     display: inline-flex;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     justify-content: center;
     line-height: 20px;
@@ -67,19 +93,27 @@
     min-height: 40px;
     min-width: 0px;
     overflow: hidden;
-    padding: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding:1rem 2rem; 
     text-align: center;
     user-select: none;
     vertical-align: middle;
-    margin: 0 auto;
+    margin: 1rem auto;
+    font-family: $body-font;
 
     &:hover{ 
         background-color: $light-purple;
+        cursor: pointer;
+
     }
     &:active{ 
         background-color: $light-purple;
+        border: none;
+        outline: 0;
+        background-color: white;
+        color:$dark-purple; 
+    }
+    &:focus{ 
+        outline:0;
     }
 }
 
