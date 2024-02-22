@@ -11,16 +11,17 @@ function MovieDetail({ movie }) {
   const isDesktop = dimensions.width > desktopWidth;
 
   const addFavouriteMovie = (movie) => {
-  
     if (!favourites.some((item) => item.id === movie.id)) {
-      const newFavouriteMovie = [...favourites, movie];
-      setFavourites(newFavouriteMovie);
-      localStorage.setItem('favourites-movies', JSON.stringify(newFavouriteMovie));
+      const newFavouriteMovies = [...favourites, movie];
+      console.log('New favorites:', newFavouriteMovies);
+      setFavourites(newFavouriteMovies);
+      localStorage.setItem('favourites-movies', JSON.stringify(newFavouriteMovies));
     }
   };
-
+  
   useEffect(() => {
     const storedFavourites = localStorage.getItem('favourites-movies');
+    console.log('Stored favorites:', storedFavourites);
     if (storedFavourites) {
       setFavourites(JSON.parse(storedFavourites));
     }
@@ -48,7 +49,8 @@ function MovieDetail({ movie }) {
         
         
         <button onClick={() => addFavouriteMovie(movie)}>
-          <AddFavourites /> 
+        <AddFavourites isInFavorites={favourites.some(item => item.id === movie.id)} />
+          
         </button>
       </div>
     </div>
