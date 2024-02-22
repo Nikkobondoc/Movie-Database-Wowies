@@ -11,9 +11,15 @@ function MovieDetail({ movie }) {
   const isDesktop = dimensions.width > desktopWidth;
 
   const addFavouriteMovie = (movie) => {
-    if (!favourites.some((item) => item.id === movie.id)) {
+    const movieIndex = favourites.findIndex((item) => item.id === movie.id);
+  
+    if (movieIndex === -1) {
       const newFavouriteMovies = [...favourites, movie];
-      console.log('New favorites:', newFavouriteMovies);
+      setFavourites(newFavouriteMovies);
+      localStorage.setItem('favourites-movies', JSON.stringify(newFavouriteMovies));
+    } else {
+      const newFavouriteMovies = [...favourites];
+      newFavouriteMovies.splice(movieIndex, 1);
       setFavourites(newFavouriteMovies);
       localStorage.setItem('favourites-movies', JSON.stringify(newFavouriteMovies));
     }
