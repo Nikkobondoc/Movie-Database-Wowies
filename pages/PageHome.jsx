@@ -9,6 +9,7 @@ import "react-alice-carousel/lib/scss/alice-carousel.scss";
 const PageHome = () => {
   const [moviesList, setMoviesList] = useState([]);
   const [query, setQuery] = useState("popular"); 
+
   // const dropdown = document.getElementById('movie-dropdown')
   // menuControl(dropdown); 
   // control.log(menuControl)

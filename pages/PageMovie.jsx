@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from "react-router-dom"
 import MovieDetail from "../components/MovieDetail"
+import AddFavourites from '../components/AddFavourites'
 
 const PageMovie =()=> {
   const [movie, setMovie] = useState(); 
@@ -23,7 +24,7 @@ console.log(movie);
 // console.log(setMovie); 
   return (
     <div>
-       { movie ? <MovieDetail movie={movie} />: console.log("error")}
+       { movie ? <MovieDetail movie={movie} favouriteComponent={AddFavourites}/>: console.log("error")}
        
     </div>
  
