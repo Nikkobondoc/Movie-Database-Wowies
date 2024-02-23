@@ -55,7 +55,7 @@ const FeatureMovie = () => {
 
     return (
         <div>
-            {movies && movies.length > 0 && <AliceCarousel mouseTracking items={items} />}
+            {movies && movies.length > 0 && <AliceCarousel mouseTracking autoPlay autoPlayInterval={3000} items={items} />} 
         </div>
     );
 };
