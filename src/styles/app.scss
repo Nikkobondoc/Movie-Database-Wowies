@@ -4,6 +4,7 @@
 } */
 
 @use "variables" as *;
+@use "mixins" as *;
 
 header{
     display: flex;
@@ -32,16 +33,18 @@ header{
   
   .wowies{
     font-size: 3rem;
-    padding: 0;
+    padding: 0.5rem 0;
     margin: 0;
   }
   
   .about{
-  display: flex;
-  flex-direction: column;
-  margin-left: 5rem;
-  margin-right: 5rem;
-  font-size: larger;
+    display: flex;
+    line-height: 1.5rem;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: larger;
   
   }
   
@@ -62,7 +65,7 @@ header{
   }
   
   .tmbd{
-    padding-top: 5rem;
+    padding: 1rem;
     display: flex;
     flex-wrap: wrap;
     width: 200px;
@@ -70,10 +73,13 @@ header{
   }
   
   nav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 10px;
+    @include mq($tablet){ 
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    
   }
 
   .movie-list{
@@ -175,13 +181,20 @@ header{
      justify-content: space-evenly;
     align-content: flex-end;
    }
-   .main-nav ul {
+   .main-nav{ 
+    ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 100%;
     // margin-top: 10px;
     gap:1rem; 
     align-items: center;
+    } 
+
+    li{ 
+      padding: 0 1rem;
+    }
   } 
   //for hover effect
 
@@ -244,7 +257,7 @@ header{
   margin-left: 2px;
 }
 /* Adjust active dot color */
-.alice-carousel__prev-btn-item, .alice-carousel__next-btn-item{
+.alice-carousel__prev-btn, .alice-carousel__next-btn{
   display: none;
 }
 
@@ -280,7 +293,10 @@ header{
         height: 65px;
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        // justify-content: space-around;
       }
   
       .about-wowies{

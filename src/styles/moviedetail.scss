@@ -127,6 +127,11 @@
 
 //trailers 
 .video-container-wrapper{ 
+    padding-bottom: 65px;
+
+    @include mq($tablet){ 
+        padding:none; 
+    }
     .video-iframe-container{ 
 
         overflow: hidden;
