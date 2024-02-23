@@ -64,7 +64,7 @@
 //   );
 // }
 
-export default MovieDetail;
+
 import React, {useState,useEffect} from 'react'
 import useWindowDimensions from '../components/ScreenSize'
 import { dateFormat } from '../utilities/format';
@@ -100,7 +100,7 @@ function MovieDetail({movie}) {
   
   useEffect(() => {
     const storedFavourites = localStorage.getItem('favourites-movies');
-    console.log('Stored favorites:', storedFavourites);
+    // console.log('Stored favorites:', storedFavourites);
     if (storedFavourites) {
       setFavourites(JSON.parse(storedFavourites));
     }
@@ -141,15 +141,15 @@ function MovieDetail({movie}) {
           <p className="desc">{movie.overview}</p>
         </div>
 
-        <div className='fav-btn-wrapper'>
-        <button onClick={() => addFavouriteMovie(movie)}>
-         <AddFavourites isInFavorites={favourites.some(item => item.id === movie.id)} className='fav-btn'/> Add to Favourite</button> 
-          {/* <button className='fav-btn'>Add to Favourite</button> */}
-        </div>
+        
+        <button className='fav-btn' onClick={() => addFavouriteMovie(movie)}>
+          <AddFavourites isInFavorites={favourites.some(item => item.id === movie.id)} />
+        </button> 
+        
         {movie.videos.results.length > 0 ? <Trailer movie={movie} /> : <div></div>}
       </div>
     </div>
     );
   }
-//   main
 
+export default MovieDetail;
