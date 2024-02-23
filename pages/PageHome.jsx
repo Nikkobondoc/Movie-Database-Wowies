@@ -10,31 +10,6 @@ const PageHome = () => {
   const [moviesList, setMoviesList] = useState([]);
   const [query, setQuery] = useState("popular"); 
 
-  // const dropdown = document.getElementById('movie-dropdown')
-  // menuControl(dropdown); 
-  // control.log(menuControl)
-
-  // const fetchMovies = useCallback(async (query = "popular") => {
-  //   try {
-  //     console.log("query:", query)
-  //     const response = await fetch(`https://api.themoviedb.org/3/movie/${query}?api_key=d616641b0feb479ee6b4cb90a886cb1f`);
-  //     if (response.ok) {
-  //       const data = await response.json();
-  //       const selectedMovies = data.results.slice(0, 12);
-  //       setMoviesList(selectedMovies);
-  //       console.log("selectedMovies:", selectedMovies);
-  //     } else {
-  //       console.error('Failed to fetch movies:', response.status);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error fetching movies:', error);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   fetchMovies();
-  // }, [fetchMovies]);
-
   useEffect(() => {
     async function fetchMovies() {
       try {
@@ -57,25 +32,65 @@ const PageHome = () => {
   }, [query]
   )
 
+  const categories = [
+    {
+      id: 'popular',
+      categoryName: 'Popular',
+    },
+    {
+      id: 'top_rated',
+      categoryName: 'Top Rated',
+    },
+    {
+      id: 'now_playing',
+      categoryName: 'Now Playing',
+    },
+    {
+      id: 'upcoming',
+      categoryName: 'Upcoming',
+    },
+  ]
 
   return (
     <>
     <div>
       <FeatureMovie />
     </div>
-    <div className='movie-list'>
-      <select name="movie-dropdown" id="movie-dropdown" className='movie-dropdown' onChange={(e) => setQuery(e.target.value)}>
+    {/* <div className='movie-list'>
+      <select name="movie-dropdown" id="movie-dropdown" className='movie-dropdown' onChange={(e) => setQuery(e.target.value)}> */}
         {/* on change, call the fetch movie function and change the query according to the valu */}
         {/* add onclick listener -> call fetch movie function and call the respective filter of each option*/}   
-        <label for="sort-popular">Popular</label>
+        {/* <label for="sort-popular">Popular</label>
         <option value="popular" >Popular</option>
         <option value="now_playing" >Now Playing</option>
         <option value="top_rated" >Top Rated</option>
         <option value="upcoming" >Upcoming</option>
       </select>
+    </div> */}
 
+    <div className='movie-list'>
+      <ul name="category-menu" id="category-menu" className='category-menu'>
+        {/* on change, call the fetch movie function and change the query according to the valu */}
+        {/* add onclick listener -> call fetch movie function and call the respective filter of each option*/}   
+
+        {categories.map((category) => (
+          <li key={category.id}>
+            <button
+              id={category.id}
+              value={category.id}
+              onClick={(e) => setQuery(e.target.value)}
+              className={
+                query === category.id
+                  ? 'active category-buttons'
+                  : 'category-buttons'
+              }
+            >{category.categoryName}</button>
+          </li>
+           ))}
+      </ul>
     </div>
-      <div><br /></div>
+
+      <br />
     <div className='home-grid'>
       {moviesList.map(movie => (
         <Movie key={movie.id} movieCard={movie} />
