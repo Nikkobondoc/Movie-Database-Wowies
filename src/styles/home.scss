@@ -243,13 +243,12 @@ main{
         font-size: 18px;
         min-height: 55px;
     }
-    
-}
 
-.category-buttons .active{ 
+}
+.category-buttons.active{ 
     background-color: $light-purple;
     cursor: pointer;
-}
+    }
 
 .feature-container{ 
     position: relative;
@@ -265,7 +264,7 @@ main{
         display: flex;
         flex-direction: column;
         z-index: 5; 
-        padding:0 1rem; 
+        padding:1rem; 
         p{ 
             font-size: 12px;
         }
