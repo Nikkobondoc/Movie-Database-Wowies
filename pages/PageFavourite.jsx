@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Removefavourites from '../components/Removefavourites';
 import '/src/styles/favourites.scss'; 
+import { Link } from "react-router-dom"
 
 
 const PageFavourite = () => {
@@ -32,9 +33,16 @@ const PageFavourite = () => {
         ) : (
           favouriteItems.map((movie, index) => (
             <div key={index} className='movie-card'>
-              <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} width="200" />
+              <div className="favourite-movie-wrap">
+                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+              </div>
               <div className="overlay-favourite">
                 <h3 className='favourite-title'>{movie.title}</h3>
+                <div className="movie-button">
+               <Link to={`/movie/${movie.id}`}>
+              <button className='more-info' role='button'>More Info</button>
+              </Link>
+              </div>
               <button onClick={() => removeFavouritesMovie(movie.id)}><Removefavourites /></button>
               </div>
             </div>
