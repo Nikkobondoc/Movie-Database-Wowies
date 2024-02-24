@@ -3,5 +3,9 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/Movie-Database-Wowies/',
+  build: {
+    outDir: 'Movie-Database-Wowies'
+  },
   plugins: [react()],
 })

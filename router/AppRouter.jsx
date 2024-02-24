@@ -13,11 +13,12 @@ import PageMovie from '../pages/PageMovie.jsx';
 
 
 import React from 'react';
+import { APP_FOLDER_NAME } from "../src/globals.js";
 
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={`/${APP_FOLDER_NAME}`} >
         <div className='wrapper'>
             <Header />
                 <main>
