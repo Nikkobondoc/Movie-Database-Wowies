@@ -11,11 +11,13 @@ const Nav = () => {
   return (
     <nav className='main-nav'>
       {isTablet ? (
+        // if wider than tablet width
         <ul>
             <li><NavLink to="/about">About</NavLink></li>
             <li><NavLink to="/favourite">Favourites</NavLink></li>
         </ul>
       ):(
+        // if smaller than tablet width
         <ul>
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/favourite">

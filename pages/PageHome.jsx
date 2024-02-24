@@ -56,25 +56,14 @@ const PageHome = () => {
     <div>
       <FeatureMovie />
     </div>
-    {/* <div className='movie-list'>
-      <select name="movie-dropdown" id="movie-dropdown" className='movie-dropdown' onChange={(e) => setQuery(e.target.value)}> */}
-        {/* on change, call the fetch movie function and change the query according to the valu */}
-        {/* add onclick listener -> call fetch movie function and call the respective filter of each option*/}   
-        {/* <label for="sort-popular">Popular</label>
-        <option value="popular" >Popular</option>
-        <option value="now_playing" >Now Playing</option>
-        <option value="top_rated" >Top Rated</option>
-        <option value="upcoming" >Upcoming</option>
-      </select>
-    </div> */}
 
     <div className='movie-list'>
       <ul name="category-menu" id="category-menu" className='category-menu'>
         {/* on change, call the fetch movie function and change the query according to the valu */}
         {/* add onclick listener -> call fetch movie function and call the respective filter of each option*/}   
-
         {categories.map((category) => (
           <li key={category.id}>
+            {/* create buttons for each category, check if query is equal to the category.id if it is then make the classname Active */}
             <button
               id={category.id}
               value={category.id}

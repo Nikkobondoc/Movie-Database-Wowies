@@ -5,6 +5,7 @@ import { minToHrMin } from '../utilities/format';
 import { ratingAverage } from '../utilities/format';
 import Trailer from './Trailer';
 import AddFavourites from './AddFavourites';
+import noPoster from '../image/no-poster.png'; 
 
 
 
@@ -33,7 +34,6 @@ function MovieDetail({movie}) {
   
   useEffect(() => {
     const storedFavourites = localStorage.getItem('favourites-movies');
-    // console.log('Stored favorites:', storedFavourites);
     if (storedFavourites) {
       setFavourites(JSON.parse(storedFavourites));
     }
@@ -44,10 +44,7 @@ function MovieDetail({movie}) {
         {isDesktop ? (
           // if is desktop....
             <div className="movie-backdrop">
-                {movie.backdrop_path === null ? 
-                  <img className="no-backdrop" src={noDisplay} alt="No Backdrop Poster" /> : 
-                  <img className="backdrop-img" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} />
-                }
+              <img className="backdrop-img" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} />
             </div>  
         ) : ""}
 
@@ -61,17 +58,18 @@ function MovieDetail({movie}) {
         </div>  
 
         <div className="movie-info-single">
+
           <h2>{movie.title}</h2>
+
           <div className="release-runtime-vote">
-              {/* <p>{movie.release_date === "" ? <p>Date Unavailable</p> : dateFormat(movie.release_date) }</p> */}
               <p>{movie.release_date === "" ? <p>Date Unavailable</p> : dateFormat(movie.release_date) }</p>
-              {/* <p>{minToHrMin(movie.runtime)}</p> */}
               <p>{minToHrMin(movie.runtime)}</p>
-              {/* format the release date and runtime */}
               <p className="vote">{ratingAverage(movie.vote_average)}</p>
               <p>Genre: {movie.genres.map(genres => genres.name).join(", ")}</p>
           </div>
+
           <p className="desc">{movie.overview}</p>
+          
         </div>
 
         
@@ -81,6 +79,7 @@ function MovieDetail({movie}) {
         
         {movie.videos.results.length > 0 ? <Trailer movie={movie} /> : <div></div>}
       </div>
+      
     </div>
     );
   }

@@ -19,13 +19,10 @@ function Trailer({movie}) {
         }
     }, [movie])
 
-    console.log(trailer);
-    console.log("trailer page movie videos:"+ movie.videos.results.length)
-
   return (
     <div className="video-container-wrapper">
         <div className="video-iframe-container">
-            <iframe width="560" height="315" src={`https://www.youtube.com/embed/${trailer}`} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> 
+            <iframe width="560" height="315" src={`https://www.youtube.com/embed/${trailer}`} title="YouTube Trailer Video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> 
         </div>
     </div> 
 

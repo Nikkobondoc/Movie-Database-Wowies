@@ -9,6 +9,7 @@ import useWindowDimensions from '../components/ScreenSize'
 
 const FeatureMovie = () => {
     const [movies, setMovies] = useState([]);
+
     const dimensions = useWindowDimensions();
     const desktopWidth = 1440;
     const isDesktop = dimensions.width > desktopWidth;
@@ -25,16 +26,19 @@ const FeatureMovie = () => {
 
     const items = movies.map(movie => (
         <div className='feature-container'>
+            
             <div className='feature-info'>
                 <h2 className='movie-card-title'>{movie.title}</h2>
                 <p className='movie-card-release-date'>{movie.release_date === "" ? <p>Date Unavailable</p> : dateFormat(movie.release_date) }</p>
                 <p className='movie-card-average'>{ratingAverage(movie.vote_average)}</p>
                 
                     {isDesktop? (
+                        // if desktop then show all the overview
                         <p className='movie-card-overv'>
                         {movie.overview} 
                         </p> 
                         ): (
+                        // if not desktop width, show only 120 characters... 
                         <p className='movie-card-overv'>
                          {movie.overview.length > 120 ?
                         `${movie.overview.substring(0, 120)}...` : movie.overview
@@ -44,11 +48,13 @@ const FeatureMovie = () => {
                     }
                
                 <div className="movie-button">
-                <Link to={`/movie/${movie.id}`}>
-                <button className='more-info' role='button'>More Info</button>
-                </Link>
+                    <Link to={`/movie/${movie.id}`}>
+                    <button className='more-info' role='button'>More Info</button>
+                    </Link>
                 </div> 
+
             </div>
+
             <img className='feature-img' key={movie.id} src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} onDragStart={handleDragStart} role="presentation" alt={movie.title}/> 
         </div>
     ));

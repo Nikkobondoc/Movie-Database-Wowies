@@ -1,4 +1,4 @@
-import Header from "../components/header";
+import  tmdb  from '../image/tmdb-logo.svg'; 
 
 const PageAbout = () => {
 
@@ -13,7 +13,7 @@ const PageAbout = () => {
 
             This product uses the <a href="https://www.themoviedb.org/?language=en-CA">TMDB</a> API but is not endorsed or certified by  <a href="https://www.themoviedb.org/?language=en-CA">TMDB</a>.</p>
 
-            <a href="https://www.themoviedb.org/?language=en-CA"><img className="tmbd" src="image/Tmdb.png" alt="tmbd logo" /></a>
+            <a href="https://www.themoviedb.org/?language=en-CA"><img className="tmbd" src={tmdb} alt="tmbd logo" /></a>
         </div>
 	);
 	
