@@ -1,1 +1,1 @@
-export const APP_FOLDER_NAME = "Movie-Database-Wowies";
+export const APP_FOLDER_NAME = "WOWIES";
